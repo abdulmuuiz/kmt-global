@@ -71,7 +71,7 @@ export default function About() {
       <section className="px-6 lg:px-8 py-24 bg-surface-low">
         <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
           <div className="lg:col-span-4">
-            <h2 className="text-2xl md:text-3xl font-headline font-bold uppercase tracking-tight mb-6">Inspection & Auction Sheet</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold uppercase tracking-tight mb-6">Inspection & Auction Sheet</h2>
             <p className="text-on-surface-variant mb-8 leading-relaxed">The Auction Sheet is the most critical document in the process. It is a technical diagram marking every scratch, dent, and mechanical anomaly with standardized codes.</p>
             <div className="space-y-4">
               <div className="bg-surface-high p-4 border-l-2 border-white">

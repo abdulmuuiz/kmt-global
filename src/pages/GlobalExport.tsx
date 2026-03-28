@@ -174,7 +174,7 @@ export default function GlobalExport() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             {/* Left: Title */}
             <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter font-headline uppercase mb-4 leading-none">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter font-headline uppercase mb-4 leading-none">
                 Vehicle<br />Sourcing<br />Request
               </h2>
               <p className="text-on-surface-variant text-sm mt-6">Submit your requirements. Our sourcing team will contact you within 24 hours with auction availability.</p>

@@ -7,7 +7,7 @@ export default function Layout() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Japan Sourcing', path: '/domestic-sales' },
+    // { name: 'Japan Sourcing', path: '/domestic-sales' }, // commented out for now
     { name: 'Global Export', path: '/global-export' },
     { name: 'Info', path: '/about' },
   ];
@@ -112,7 +112,7 @@ export default function Layout() {
           <div>
             <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Service</h4>
             <ul className="space-y-4">
-              <li><Link to="/domestic-sales" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Japan Sourcing</Link></li>
+              {/* <li><Link to="/domestic-sales" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Japan Sourcing</Link></li> */}
               <li><Link to="/global-export" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Global Export</Link></li>
               <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Auction Rules</Link></li>
             </ul>

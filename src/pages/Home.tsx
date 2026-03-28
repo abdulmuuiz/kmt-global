@@ -17,7 +17,7 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <span className="font-label uppercase tracking-[0.3em] text-secondary text-xs mb-4 block">Precision Automotive Sourcing</span>
-            <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] uppercase">
+            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.9] uppercase">
               Japan<br />Sourcing
             </h1>
             <p className="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
@@ -63,11 +63,11 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <h2 className="font-headline text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-tighter">The Sourcing Blueprint</h2>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-tighter">The Sourcing Blueprint</h2>
               <p className="font-body text-on-surface-variant text-lg">A rigorous 9-step methodology designed to ensure mechanical integrity and financial transparency.</p>
             </div>
             <div className="text-right">
-              <span className="font-label text-5xl md:text-6xl font-black text-surface-highest select-none">01—09</span>
+              <span className="font-label text-4xl md:text-5xl font-black text-surface-highest select-none">01—09</span>
             </div>
           </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
       <section className="py-32 bg-primary text-on-primary overflow-hidden relative">
         <div className="container mx-auto px-6 lg:px-8 text-center relative z-10">
           <span className="font-label text-[10px] tracking-[0.4em] uppercase font-bold mb-6 block">Ready to acquire?</span>
-          <h2 className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase mb-8 leading-none">
+          <h2 className="font-headline text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase mb-8 leading-none">
             Engineer Your<br />Acquisition
           </h2>
           <p className="font-body text-on-primary/80 text-xl max-w-2xl mx-auto mb-12">
