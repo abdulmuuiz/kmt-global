@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#c6c6c6",
+                        "primary-fixed": "#5d5f5f",
+                        "inverse-primary": "#5d5f5f",
+                        "tertiary-container": "#919090",
+                        "tertiary-fixed-dim": "#474747",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-fixed": "#5f5e5e",
+                        "primary": "#ffffff",
+                        "tertiary": "#e4e2e1",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#1a1c1c",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "on-tertiary": "#1b1c1c",
+                        "on-primary": "#1a1c1c",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed": "#c7c6c6",
+                        "on-primary-fixed": "#ffffff",
+                        "on-tertiary-fixed": "#ffffff",
+                        "inverse-surface": "#e2e2e2",
+                        "secondary-container": "#464747",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-dim": "#131313",
+                        "inverse-on-surface": "#303030",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#000000",
+                        "on-primary-container": "#000000",
+                        "outline-variant": "#474747",
+                        "on-tertiary-fixed-variant": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#3a3c3c",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#454747",
+                        "secondary": "#c7c6c6",
+                        "outline": "#919191",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-container": "#e3e2e2",
+                        "primary-container": "#d4d4d4",
+                        "surface-tint": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "error-container": "#93000a",
+                        "on-surface": "#e2e2e2",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1b1b1b",
+                        "secondary-fixed-dim": "#ababab"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] border-b border-white/10 docked full-width top-0 z-50 fixed w-full">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white font-headline">
+                KMT GLOBAL
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[0.75rem] font-medium text-[#c7c6c6] hover:text-white transition-colors duration-200" href="#">Home</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[0.75rem] font-medium text-white border-b-2 border-white pb-1" href="#">Japan Sourcing</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[0.75rem] font-medium text-[#c7c6c6] hover:text-white transition-colors duration-200" href="#">Global Export</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[0.75rem] font-medium text-[#c7c6c6] hover:text-white transition-colors duration-200" href="#">Domestic Sales</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[0.75rem] font-medium text-[#c7c6c6] hover:text-white transition-colors duration-200" href="#">Info</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-white cursor-pointer hover:bg-white/5 p-2" data-icon="language">language</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:bg-white/5 p-2" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Japan Sourcing Hero" class="w-full h-full object-cover grayscale opacity-50" data-alt="Cinematic wide shot of a pristine silver Japanese sports car in a high-tech minimalist auction house with dramatic overhead studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkVkMFYjcTLoDzHw5nj-QCHqiNjKPQxEPVWpmnestBaL2agWVxZDeRklu-w_1YCA3LdoPAzqIgQHkrjKzcQRx4yv9irMOVWHphixPoTfoIiBPgXTlEdIFZSY-YfKtfUH8xcONMiT1-2NtoRRAG3lQ36MOa-qf7liAUzHdsuajfFhOl0zLLccibLVI5xZp1hBg_F2vHUXuwOZiDJoBmFVr210OQL7hyQXMK-o1PbVY6OuvDJokB41Rby1XcE4GkbEeBcnkhzJi27Tqv"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<span class="font-label uppercase tracking-[0.3em] text-secondary text-xs mb-4 block">Precision Automotive Sourcing</span>
+<h1 class="font-headline text-7xl md:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9]">
+                        JAPAN<br/>SOURCING
+                    </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Access over 120 auction houses across Japan through our direct bidding network. Engineering transparency into every transaction.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface-container-lowest py-24 border-y border-white/5">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col">
+<span class="font-headline text-5xl font-bold text-white mb-2">120+</span>
+<span class="font-label uppercase tracking-widest text-secondary text-xs">Auction Houses</span>
+<div class="h-px w-12 bg-primary mt-6"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-5xl font-bold text-white mb-2">DIRECT</span>
+<span class="font-label uppercase tracking-widest text-secondary text-xs">Auction Access</span>
+<div class="h-px w-12 bg-primary mt-6"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-5xl font-bold text-white mb-2">END-TO-END</span>
+<span class="font-label uppercase tracking-widest text-secondary text-xs">Purchase &amp; Delivery</span>
+<div class="h-px w-12 bg-primary mt-6"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9-Step Process Section -->
+<section class="py-32 bg-background">
+<div class="container mx-auto px-8">
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl font-bold text-white mb-6 uppercase tracking-tighter">THE SOURCING BLUEPRINT</h2>
+<p class="font-body text-on-surface-variant text-lg">A rigorous 9-step methodology designed to ensure mechanical integrity and financial transparency.</p>
+</div>
+<div class="text-right">
+<span class="font-label text-6xl font-black text-surface-container-highest select-none">PROCESS v.1.0</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24">
+<!-- Step 1 -->
+<div class="md:col-span-4 pr-12">
+<span class="font-headline text-8xl font-black text-white/5 absolute -mt-12 -ml-8 select-none">01</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 relative">Vehicle Request</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8">Initiate your search by specifying make, model, year, and condition requirements. Our system logs your precision parameters.</p>
+</div>
+<div class="md:col-span-8 bg-surface-container-low h-80 relative overflow-hidden">
+<img alt="Process Step 1" class="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" data-alt="Abstract minimalist representation of a digital interface showing automotive data and car silhouettes on a dark screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1fvNPlhT-4LfXmV7c-ACbSfVGIvaUFcITQfQ_LW0L5Sarsg_eQJ2ID5hWsPEuOBU1Ov2v1c5MCWwsYsphAZEs-T2hMSiKm59yRiTrl-EgdnU9Mx1yu0bT-2riaKII2Xwqj7ORitFMN5tDjOuyn5LSxn2CNaa2bBi7Yor9xV6zGBGwHc8qDZkaDRln_eJQmLRlB9ozlD5sGVi5VcT2UovFvdokxpdnwqq2_EWfMsZqWc2pGrBzJbs3k6EpK2id9idrH3XxEtlBAlh2"/>
+<div class="absolute bottom-6 right-6 font-label text-[10px] tracking-[0.3em] uppercase bg-primary text-on-primary px-3 py-1">INTERFACE VIEW</div>
+</div>
+<!-- Step 2 & 3 Combined Layout -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container-high p-12 flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="font-headline text-4xl font-black text-white/10 block mb-4">02</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 uppercase">Auction Sourcing</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Our specialists scan 120+ daily auction feeds to match your specific request with available units.</p>
+</div>
+<div class="mt-8 border-l-2 border-primary pl-6">
+<span class="block font-label text-[10px] text-secondary mb-2">LIVE DATA FEED</span>
+<div class="space-y-2">
+<div class="h-1 bg-surface-container-highest w-full"></div>
+<div class="h-1 bg-surface-container-highest w-3/4"></div>
+<div class="h-1 bg-primary w-1/2"></div>
+</div>
+</div>
+</div>
+<div class="p-12 border border-white/5 flex flex-col justify-between">
+<div>
+<span class="font-headline text-4xl font-black text-white/10 block mb-4">03</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 uppercase">Vehicle Selection</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">We present a curated shortlist of vehicles that meet our strict internal quality benchmarks for your review.</p>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-2">
+<div class="aspect-square bg-surface-container-highest"></div>
+<div class="aspect-square bg-surface-container-highest"></div>
+<div class="aspect-square bg-white"></div>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="md:col-span-7 bg-surface-container p-12">
+<span class="font-headline text-4xl font-black text-white/10 block mb-4">04</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-6 uppercase">Inspection &amp; Verification</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8">Rigorous decoding of the Japanese auction sheet. We verify mechanical grade, exterior condition, and interior cleanliness to ensure zero surprises.</p>
+<div class="bg-surface-container-lowest p-6 border border-white/10">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-[10px] text-secondary">SPECIMEN: AUCTION SHEET #8821</span>
+<span class="font-label text-[10px] bg-primary text-on-primary px-2">VERIFIED</span>
+</div>
+<img alt="Inspection Visual" class="w-full grayscale opacity-60 h-40 object-cover" data-alt="Technical document with Japanese characters and automotive diagrams, highlighted with digital grid lines and precision markers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8F2i1TPftY_aewlZm8fG85mt9YbM1-rasmQopLD3WnBwmu4mDY3M39vguE_o_szmhqzg9xPEGp7HYc_qC5oWeHD3dD8J_x9xhhCb5CbQNUJDLfliSCAkUVMw2P42pB85rb7G_UdjZCVToC-HI7ZvGxREKcF7_0S2Rq50AelFhlF8ow4ngzH_wzyc0VZ9KvdqTUp0vjNLRfAp3eTy8egvf9nX7e5ddW3DWoVKltn1Q0_itj-1bPO9wWB427_E35fWNsEsPF5kExrgz"/>
+</div>
+</div>
+<div class="md:col-span-5 flex items-center justify-center p-12">
+<div>
+<span class="font-headline text-4xl font-black text-white/10 block mb-4">05</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 uppercase">Price Confirmation</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Calculation of the total landed cost including auction fees, taxes, and shipping logistics.</p>
+</div>
+</div>
+<!-- Step 6, 7, 8 Grid -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 border-t-4 border-white">
+<span class="font-headline text-xl font-bold text-white block mb-2">06</span>
+<h4 class="font-label uppercase tracking-widest text-xs text-secondary mb-4">Deposit Confirmation</h4>
+<p class="text-sm font-body text-on-surface-variant">Security deposit required to authorize live bidding protocols.</p>
+</div>
+<div class="bg-primary p-8">
+<span class="font-headline text-xl font-bold text-on-primary block mb-2">07</span>
+<h4 class="font-label uppercase tracking-widest text-xs text-on-primary/70 mb-4">Auction Bidding</h4>
+<p class="text-sm font-body text-on-primary">Live participation in the auction house. Our team executes bids with millisecond precision.</p>
+<span class="material-symbols-outlined text-4xl mt-8 text-on-primary" data-icon="gavel">gavel</span>
+</div>
+<div class="bg-surface-container-low p-8 border-t-4 border-white">
+<span class="font-headline text-xl font-bold text-white block mb-2">08</span>
+<h4 class="font-label uppercase tracking-widest text-xs text-secondary mb-4">Final Payment</h4>
+<p class="text-sm font-body text-on-surface-variant">Settlement of the balance upon successful auction acquisition.</p>
+</div>
+</div>
+<!-- Step 9 -->
+<div class="md:col-span-12 flex flex-col md:flex-row items-center gap-12 bg-surface-container-highest p-12">
+<div class="md:w-1/2">
+<span class="font-headline text-6xl font-black text-white/10 block mb-4">09</span>
+<h3 class="font-headline text-3xl font-bold text-white mb-6 uppercase tracking-tight">Delivery &amp; Handover</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">Final logistics execution. We handle shipping documentation, local compliance, and delivery to your doorstep.</p>
+</div>
+<div class="md:w-1/2 h-64 w-full">
+<img alt="Delivery Visual" class="w-full h-full object-cover grayscale" data-alt="Modern car carrier truck driving on a clean industrial coastal road in Japan during a monochrome sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89BmpE7OZzwa17ilPOluWE9zajm9BSvD8CwBIzXrJ62ybGgI5jsKzhuP0ekA7KOf84bQTVPAa3oJggDTd_aTnD2pb0NjzfZ6MIkb4QCplTtP9aeQEOwt9Nb_phHqF5_ix8lIgcqE1o4ubgwQGxP_TRUbhNnEZbLltDol-u6Z-vaCwZcBgfeUaebtRPstDwFeU8gnq0QJx4BkTYYcH9rwYzEYLgkwSmC4r_sEPbuWR2s64ik8BqWXtmeAK9781RUcniaz1ezdfNlNP"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 bg-white text-on-primary overflow-hidden relative">
+<div class="container mx-auto px-8 text-center relative z-10">
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-none">
+                    ENGINEER YOUR <br/>ACQUISITION
+                </h2>
+<p class="font-body text-on-primary/80 text-xl max-w-2xl mx-auto mb-12">
+                    Start the process today and gain direct access to the world's most transparent automotive inventory.
+                </p>
+<button class="bg-background text-white px-12 py-6 font-label uppercase tracking-widest text-sm hover:bg-surface-container-highest transition-all duration-300 scale-100 active:scale-95">
+                    Request a Vehicle
+                </button>
+</div>
+<!-- Decorative subtle pattern -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none select-none overflow-hidden flex flex-wrap gap-4">
+<div class="text-9xl font-black">KMT</div>
+<div class="text-9xl font-black">GLOBAL</div>
+<div class="text-9xl font-black">AUCTION</div>
+<div class="text-9xl font-black">PRECISION</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] dark:bg-[#0e0e0e] full-width py-16 px-8 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-[1920px] mx-auto">
+<div class="col-span-1">
+<div class="text-2xl font-black tracking-tighter text-white mb-4 font-headline uppercase">KMT GLOBAL</div>
+<p class="font-body text-[#919191] text-[0.75rem] leading-relaxed uppercase tracking-wider">
+                    Precision automotive sourcing from the heart of Japan.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6">Service</h4>
+<ul class="space-y-4">
+<li><a class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191] hover:text-white transition-all" href="#">Auction Rules</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191] hover:text-white transition-all" href="#">Sourcing Process</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191] hover:text-white transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191] hover:text-white transition-all" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6">Connect</h4>
+<a class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191] hover:text-white transition-all" href="#">Contact Us</a>
+</div>
+</div>
+<div class="max-w-[1920px] mx-auto mt-16 pt-8 border-t border-white/5 flex justify-between items-center">
+<span class="font-['Space_Grotesk'] text-[0.75rem] tracking-widest uppercase text-[#919191]">© 2024 KMT GLOBAL. PRECISION AUTOMOTIVE SOURCING.</span>
+</div>
+</footer>
+</body></html>

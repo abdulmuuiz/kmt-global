@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "tertiary": "#e4e2e1",
+                        "outline": "#919191",
+                        "on-tertiary-fixed": "#ffffff",
+                        "on-secondary-fixed-variant": "#3a3c3c",
+                        "on-surface-variant": "#c6c6c6",
+                        "primary": "#ffffff",
+                        "secondary-fixed": "#c7c6c6",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#474747",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#c7c6c6",
+                        "surface-tint": "#c6c6c7",
+                        "on-primary": "#1a1c1c",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-highest": "#353535",
+                        "primary-fixed-dim": "#454747",
+                        "secondary-container": "#464747",
+                        "on-primary-container": "#000000",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#1b1c1c",
+                        "on-secondary-container": "#e3e2e2",
+                        "on-background": "#e2e2e2",
+                        "tertiary-fixed": "#5f5e5e",
+                        "secondary-fixed-dim": "#ababab",
+                        "primary-container": "#d4d4d4",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-variant": "#353535",
+                        "on-tertiary-container": "#000000",
+                        "primary-fixed": "#5d5f5f",
+                        "on-primary-fixed": "#ffffff",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "outline-variant": "#474747",
+                        "on-secondary": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#e4e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-container": "#919090"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313] border-b border-[#353535]/20 flex items-center justify-between px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">menu</span>
+<span class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-xl text-[#ffffff]">KMT GLOBAL</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#ffffff]">search</span>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section -->
+<section class="relative h-[353px] flex items-end p-6 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent z-10"></div>
+<img alt="High-end Japanese sports car in a minimalist concrete garage" class="absolute inset-0 w-full h-full object-cover" data-alt="Monochrome close-up of a high-end Japanese sports car in a minimalist concrete architectural space with sharp dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5HB5_q6Z7qKVUFJF7UXvak-xNmOOUDWYGL844qDP8zQksC4feytBvoH-Xk908aI_sGPq7ajJb3BSlawXR5eoB7WDzkwDlh8Zr9Htr35P0N6OETD9ht43OxWKLeVo92G_cqCiL3Gz2JsNpujM-hjnke7p0O7ZI2PH3Lz9dnsXpQsh7FECw7zFMJzdvdeqiugfaPXBsFkQlC7tZaKIFcsb8Q8khvzoFv1u9N9LIYXiQYdRM0LybFVmCaKCyaWy21g9mMo7HMHchqseF"/>
+<div class="relative z-20">
+<h1 class="font-headline text-5xl font-bold tracking-tighter uppercase leading-[0.9] mb-2 text-primary">JAPAN<br/>SOURCING</h1>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-secondary">The 9-Step Precision Protocol</p>
+</div>
+</section>
+<!-- Step Guide: Vertical Timeline -->
+<section class="px-6 py-12 bg-surface">
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-4 top-0 bottom-0 w-[1px] bg-outline-variant/30"></div>
+<!-- Step 1 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 01</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Consultation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light mb-4">Initial strategy session to define your target vehicle parameters, budget thresholds, and importation requirements.</p>
+<div class="h-48 w-full bg-surface-container-low overflow-hidden">
+<img alt="Professional workspace with architectural floor plans" class="w-full h-full object-cover grayscale opacity-60" data-alt="Top-down view of a minimalist black workspace with a tablet displaying automotive technical diagrams and a matte black pen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSMXIH9aLUR_AqfAdeDDeQ0am9nz4W4bauJUKza2WMDnE_0P_ZWFIOm4zhcIWe9N1BPhD0-4fZQobLG3HGqWDBp6rtc_TGys-Nh21HUF9TvO8oBW_q6MOO7eXz9-5zFWvBZBmEkFiGSjLJcvIF1rLDtFilZsTej3J6KvV689YeoxP_JsDFj54LgpeJYCvCbodsfP42F_OUqtrx5w53Rh20n1019vnBEzdozYGvTNWoMekzo8pIMHmjs8tS5jhL5mRrow0FInf50M1v"/>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 02</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Deposit</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Activation of sourcing privileges via a fully refundable security deposit, securing your position in our auction bidding queue.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 03</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Daily Sourcing</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light mb-4">Curated selection of daily auction inventory. We filter thousands of listings to present only the highest grade opportunities.</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="aspect-square bg-surface-container-highest">
+<img alt="Close up of a luxury car steering wheel" class="w-full h-full object-cover grayscale" data-alt="Extreme close-up of a luxury car carbon fiber steering wheel detail in a dark studio setting with stark highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDOVi4vOz3SL8T6jRhN67bl7jTs2CUapq-BBjdmx7_sbqfDqeCcTjbTYZ8JdaHqEXwEux095j4xBqapIJgxoIz10JSnvUNMlQmqKKLL8lByUuktJSBwzYTSJbc2TgI6jCAvZwd5YDNMKAkcnWICPC1mXCE7LXAAPa5VIahf833B7USfJ5oqytVXhPgM69lnnPo6XFOF1zryZEdqPkebyMMR1lczpbLVBoDyoeCfrDHj7MuRUfyT4AdYatKDvgB-DdXgdKoTMEbdaRT"/>
+</div>
+<div class="aspect-square bg-surface-container-highest">
+<img alt="Rear light of a modern vehicle" class="w-full h-full object-cover grayscale" data-alt="Abstract macro shot of a sleek modern vehicle LED tail light with high contrast monochrome lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUKLjeUK1UeARB1xAOEzGVKUzhjwLrKXmfoZYsiW0yGZGZeOX806WPTB6GpiAmJ0Ej82Y5Ob7zQGRzro0JAUNTegmXhYFN4_zOLbac_lXqjeOf3LeHEiqei13P7S44j-WQlTvxf85vVqezVsEpgdiJiQ_O2wHoSiyXHoD9iif37_SEY88vhqQZxnbouW33JBO-nco0M2Gh9B8biaTaB95p71vuWWVRKZJr3nEbctnrALLdaRV0RKVEQ2hZBvltWBcrECy2Fboq7NRU"/>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 04</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Inspection</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">On-site physical appraisal by our Japanese technicians. Verification of auction sheet accuracy and mechanical integrity.</p>
+</div>
+<!-- Step 5 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 05</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Auction Bidding</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Execution of the bidding strategy. Our agents operate in real-time across all major Japanese auction houses.</p>
+</div>
+<!-- Step 6 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 06</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Acquisition</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light mb-4">Upon a successful bid, the vehicle is secured and moved to our export yard for final high-resolution documentation.</p>
+<div class="h-64 w-full bg-surface-container-low">
+<img alt="Container shipping yard at night" class="w-full h-full object-cover grayscale opacity-80" data-alt="Cinematic night shot of a dark shipping yard with containers stacked high, illuminated by industrial spotlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTfkmN0t9oG7RP450ZYBf4siK0m7PlsFrHxL9J3AailF0AyC0s9qFTgFBab2w-0JEAGm6t_LaIn0wfpo10jC5b_x9Wo18Adk_s7JFZICtObac9iJG9VuOrPInr-rjKbQrus-HAU6-kdFvExPJLjqjflKySoT-9xeUjh_c8jgKpgm6lm22jDupy3H442q8KCBaL_lAJ0t1UIib3OT2tH8DBqBuCcGHCk4xbmgj2d7hC3BVGT0kld4Ju6SCX3p4H8MyuKXYuL33wCkv"/>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 07</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Shipping</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Logistics coordination for Ro-Ro or Container shipping. All export documentation is processed with Japanese customs.</p>
+</div>
+<!-- Step 8 -->
+<div class="relative pl-12 mb-16">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 08</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Customs</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Managing arrival logistics, duty payments, and local compliance inspections to ensure legal road registration.</p>
+</div>
+<!-- Step 9 -->
+<div class="relative pl-12">
+<div class="absolute left-[13px] top-1 w-2 h-2 bg-primary"></div>
+<span class="font-label text-[10px] tracking-widest text-outline uppercase mb-2 block">Step 09</span>
+<h3 class="font-headline text-2xl font-bold uppercase mb-3">Delivery</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Final handover at your designated location. The completion of your precision automotive acquisition.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA Area -->
+<section class="p-6 bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="bg-surface-container-high p-8 flex flex-col items-center text-center">
+<h2 class="font-headline text-3xl font-bold uppercase mb-6 tracking-tight">Ready to begin?</h2>
+<button class="w-full py-5 bg-primary text-on-primary font-label font-bold uppercase tracking-widest text-sm">
+                    Request a Vehicle
+                </button>
+<p class="mt-6 text-outline font-label text-[10px] tracking-[0.2em] uppercase">Private Sourcing Inventory Available</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 bg-[#131313] border-t border-[#353535]/30 flex justify-around items-center px-4 pb-safe z-50">
+<div class="flex flex-col items-center justify-center text-[#c7c6c6]">
+<span class="material-symbols-outlined">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ffffff] scale-110">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#c7c6c6]">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#c7c6c6]">
+<span class="material-symbols-outlined">person</span>
+</div>
+</nav>
+</body></html>
