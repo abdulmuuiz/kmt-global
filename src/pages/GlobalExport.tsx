@@ -71,6 +71,10 @@ const STEPS = [
     desc: 'International shipment is arranged to your destination.',
     details: ['RoRo (Roll-on / Roll-off) shipping', 'Container shipping for high-value vehicles', 'Bill of Lading and Export Certificate provided', 'Customs clearance documentation included'],
     note: 'Upon arrival at the destination port, you proceed with local import procedures and vehicle clearance.',
+    shippingImages: [
+      { src: '/roro.jpeg', alt: 'RoRo vessel loading vehicles at port', label: 'RoRo Shipping' },
+      { src: '/container.jpeg', alt: 'Container ship at port with loading cranes', label: 'Container Shipping' },
+    ],
     link: { text: 'Learn about shipping methods', to: '/info#shipping' },
   },
 ];
@@ -178,6 +182,17 @@ export default function GlobalExport() {
                   {step.image && (
                     <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
                       <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
+                    </div>
+                  )}
+
+                  {step.shippingImages && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                      {step.shippingImages.map((img) => (
+                        <div key={img.label} className="bg-surface-lowest border border-white/5 overflow-hidden">
+                          <img src={img.src} alt={img.alt} className="w-full h-36 object-cover" />
+                          <p className="text-[10px] font-label tracking-[0.2em] uppercase text-outline text-center py-2">{img.label}</p>
+                        </div>
+                      ))}
                     </div>
                   )}
 

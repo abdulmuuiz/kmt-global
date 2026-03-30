@@ -5,6 +5,7 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import GlobalExport from './pages/GlobalExport';
 import JapanSourcing from './pages/JapanSourcing';
@@ -14,6 +15,7 @@ import RequestVehicle from './pages/RequestVehicle';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

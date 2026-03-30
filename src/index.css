@@ -36,6 +36,10 @@
   --color-surface-variant: #353535;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-surface);

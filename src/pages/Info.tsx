@@ -313,9 +313,8 @@ export default function Info() {
                 Vehicles are driven directly onto the vessel and secured inside the ship for transport. The most commonly used and cost-effective method.
               </p>
               <p className="text-xs text-outline">Suitable for standard, running vehicles.</p>
-              {/* Placeholder */}
-              <div className="mt-6 bg-surface-lowest p-6 text-center border border-white/5">
-                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-outline">RoRo Visual — Designer Asset Needed</span>
+              <div className="mt-6 bg-surface-lowest p-1 border border-white/5 overflow-hidden">
+                <img src="/roro.jpeg" alt="RoRo vessel loading vehicles at port" className="w-full h-48 object-cover" />
               </div>
             </div>
 
@@ -326,9 +325,8 @@ export default function Info() {
                 The vehicle is loaded into a container and secured for transport. Provides a higher level of protection.
               </p>
               <p className="text-xs text-outline">Used for high-value or non-running vehicles, or when shipping spare parts together.</p>
-              {/* Placeholder */}
-              <div className="mt-6 bg-surface-lowest p-6 text-center border border-white/5">
-                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-outline">Container Visual — Designer Asset Needed</span>
+              <div className="mt-6 bg-surface-lowest p-1 border border-white/5 overflow-hidden">
+                <img src="/container.jpeg" alt="Container ship at port with loading cranes" className="w-full h-48 object-cover" />
               </div>
             </div>
           </div>
