@@ -1,204 +1,321 @@
 import { Link } from 'react-router-dom';
 
+const FEATURED_VEHICLES = [
+  {
+    name: '1999 Mazda RX-7 FD3S',
+    price: '¥7,250,000',
+    grade: '4.5',
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    name: 'Nissan Silvia S15',
+    price: '¥4,100,000',
+    grade: '4.0',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    name: 'Toyota Supra RZ',
+    price: '¥12,800,000',
+    grade: '4.5',
+    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    name: '1992 Honda NSX',
+    price: '¥14,400,000',
+    grade: '5.0',
+    image: 'https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&q=80&w=800',
+  },
+];
+
 export default function Home() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center overflow-hidden bg-surface-lowest">
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-surface-lowest">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=2000"
-            alt="Japan Sourcing"
-            className="w-full h-full object-cover grayscale opacity-50"
+            alt="Japan Auction"
+            className="w-full h-full object-cover grayscale opacity-25"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
         </div>
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10 py-32">
           <div className="max-w-3xl">
-            <span className="font-label uppercase tracking-[0.3em] text-secondary text-xs mb-4 block">Precision Automotive Sourcing</span>
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.9] uppercase">
-              Japan<br />Sourcing
+            <span className="font-label uppercase tracking-[0.3em] text-accent text-xs mb-4 block">Direct Access to Japan's Vehicle Auctions</span>
+            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[0.9] uppercase">
+              Buy Vehicles at<br />True Market Prices
             </h1>
-            <p className="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
-              Access over 120 auction houses across Japan through our direct bidding network. Engineering transparency into every transaction.
+            <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
+              Access the same auction network as dealers. Secure vehicles directly through Japan's wholesale system — no retail markups, no hidden margins.
             </p>
-            <div className="flex gap-4">
-              <Link
-                to="/global-export"
-                className="bg-primary text-on-primary px-10 py-4 font-label font-bold uppercase tracking-widest text-sm hover:bg-secondary transition-all active:scale-95"
+            <Link
+              to="/request"
+              className="inline-flex items-center gap-3 bg-accent text-on-accent px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:bg-accent-dim transition-all active:scale-95"
+            >
+              Request a Vehicle
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <section className="bg-surface-lowest border-y border-white/5 py-8">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              { value: '120+', label: 'Auction\nHouses', accent: true },
+              { value: 'Direct', label: 'Auction\nAccess', accent: false },
+              { value: 'No', label: 'Hidden\nMarkups', accent: false },
+              { value: 'Licensed', label: 'Exporter\nin Japan', accent: false },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-4">
+                <span className={`font-headline text-2xl md:text-3xl font-bold ${stat.accent ? 'text-accent' : 'text-white'}`}>{stat.value}</span>
+                <span className="font-label uppercase tracking-widest text-secondary text-[10px] leading-tight whitespace-pre-line">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Access the Same Auction Network */}
+      <section className="py-24 md:py-32 bg-surface">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">The Wholesale Advantage</span>
+            <h2 className="font-headline text-3xl md:text-5xl font-bold text-white uppercase tracking-tighter mb-8">
+              Access the Same Auction<br />Network as Dealers
+            </h2>
+            <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+              In Japan, vehicles are sourced through dealer-only auction networks before reaching dealerships. You access the same system — securing vehicles directly through auction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works — 4 Steps */}
+      <section className="py-24 md:py-32 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">The Process</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">How It Works</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                num: '01',
+                title: 'Submit Your Requirements',
+                desc: 'Tell us what you\'re looking for. Make, model, year, budget, and destination.',
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />,
+              },
+              {
+                num: '02',
+                title: 'We Source from Auctions',
+                desc: 'Vehicles are identified through Japan\'s auction network based on your exact specifications.',
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />,
+                highlight: true,
+              },
+              {
+                num: '03',
+                title: 'You Review & Approve',
+                desc: 'Auction sheets, inspection reports, and photos are provided for your review before any action.',
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />,
+              },
+              {
+                num: '04',
+                title: 'We Bid & Secure',
+                desc: 'Bidding is conducted strictly within your approved limit. Vehicle secured and shipped to you.',
+                icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />,
+              },
+            ].map((step) => (
+              <div
+                key={step.num}
+                className={`p-8 md:p-10 ${step.highlight ? 'bg-accent text-on-accent' : 'bg-surface-high group hover:bg-surface-variant transition-colors'}`}
               >
-                Request a Vehicle
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-surface-lowest py-24 border-y border-white/5">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div className="flex flex-col">
-              <span className="font-headline text-5xl font-bold text-white mb-2">120+</span>
-              <span className="font-label uppercase tracking-widest text-secondary text-xs">Auction Houses</span>
-              <div className="h-px w-12 bg-primary mt-6"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-headline text-5xl font-bold text-white mb-2">DIRECT</span>
-              <span className="font-label uppercase tracking-widest text-secondary text-xs">Auction Access</span>
-              <div className="h-px w-12 bg-primary mt-6"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-headline text-5xl font-bold text-white mb-2">END-TO-END</span>
-              <span className="font-label uppercase tracking-widest text-secondary text-xs">Purchase & Delivery</span>
-              <div className="h-px w-12 bg-primary mt-6"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sourcing Blueprint — 9 Steps */}
-      <section className="py-32 bg-surface">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="max-w-2xl">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-tighter">The Sourcing Blueprint</h2>
-              <p className="font-body text-on-surface-variant text-lg">A rigorous 9-step methodology designed to ensure mechanical integrity and financial transparency.</p>
-            </div>
-            <div className="text-right">
-              <span className="font-label text-4xl md:text-5xl font-black text-surface-highest select-none">01—09</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-y-24">
-            {/* Step 1 */}
-            <div className="md:col-span-4 md:pr-12">
-              <span className="font-headline text-7xl md:text-8xl font-black text-white/5 block mb-2 select-none">01</span>
-              <h3 className="font-headline text-2xl font-bold text-white mb-4 uppercase">Vehicle Request</h3>
-              <p className="font-body text-on-surface-variant leading-relaxed">Initiate your search by specifying make, model, year, and condition requirements. Our system logs your precision parameters.</p>
-            </div>
-            <div className="md:col-span-8 bg-surface-low h-64 md:h-80 relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1200"
-                alt="Vehicle Request"
-                className="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute bottom-6 right-6 font-label text-[10px] tracking-[0.3em] uppercase bg-primary text-on-primary px-3 py-1">INTERFACE VIEW</div>
-            </div>
-
-            {/* Step 2 & 3 */}
-            <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-              <div className="bg-surface-high p-8 md:p-12 flex flex-col justify-between min-h-[300px]">
-                <div>
-                  <span className="font-headline text-4xl font-black text-white/10 block mb-4">02</span>
-                  <h3 className="font-headline text-2xl font-bold text-white mb-4 uppercase">Auction Sourcing</h3>
-                  <p className="font-body text-on-surface-variant leading-relaxed">Our specialists scan 120+ daily auction feeds to match your specific request with available units.</p>
+                <div className="flex items-start justify-between mb-8">
+                  <span className={`font-headline text-5xl font-black select-none ${step.highlight ? 'text-black/10' : 'text-white/5 group-hover:text-accent/10 transition-colors'}`}>{step.num}</span>
+                  <div className={`w-10 h-10 border flex items-center justify-center ${step.highlight ? 'border-black/20' : 'border-accent/30'}`}>
+                    <svg className={`w-5 h-5 ${step.highlight ? 'text-on-accent' : 'text-accent'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">{step.icon}</svg>
+                  </div>
                 </div>
-                <div className="mt-8 border-l-2 border-primary pl-6">
-                  <span className="block font-label text-[10px] text-secondary mb-2">LIVE DATA FEED</span>
-                  <div className="space-y-2">
-                    <div className="h-1 bg-surface-highest w-full"></div>
-                    <div className="h-1 bg-surface-highest w-3/4"></div>
-                    <div className="h-1 bg-primary w-1/2"></div>
+                <h3 className={`font-headline text-lg font-bold mb-3 uppercase ${step.highlight ? '' : 'text-white'}`}>{step.title}</h3>
+                <p className={`text-sm leading-relaxed ${step.highlight ? 'opacity-80' : 'text-on-surface-variant'}`}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Transparent Pricing */}
+      <section className="py-24 md:py-32 bg-surface">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Transparent Pricing</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter mb-6">No Hidden Markups</h2>
+            <p className="text-on-surface-variant text-lg max-w-2xl mx-auto">
+              Vehicles are secured directly through Japan's auction network. The official auction invoice reflects the exact purchase amount.
+            </p>
+          </div>
+
+          {/* Wholesale Advantage Comparison */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="bg-surface-low p-8 md:p-12 space-y-8 opacity-60">
+              <div>
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-outline block mb-2">Typical Retail Exporter</span>
+                <div className="h-px w-12 bg-outline-variant"></div>
+              </div>
+              <div className="space-y-6">
+                {[
+                  { label: 'Inventory', value: 'Limited dealer stock' },
+                  { label: 'Markup', value: '30 — 50% above auction price' },
+                  { label: 'Pricing', value: 'Fixed, non-negotiable' },
+                  { label: 'History', value: 'Partial or hidden' },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-white/5">
+                    <span className="font-label text-xs uppercase tracking-widest text-outline">{item.label}</span>
+                    <span className="text-sm text-on-surface-variant">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-surface-high p-8 md:p-12 space-y-8 border-l-2 border-accent">
+              <div>
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-2">KMT Global — Direct Access</span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <div className="space-y-6">
+                {[
+                  { label: 'Inventory', value: '120+ dealer auction houses' },
+                  { label: 'Markup', value: 'Wholesale price + flat fee' },
+                  { label: 'Pricing', value: 'Transparent auction invoice' },
+                  { label: 'History', value: 'Verified auction grading sheet' },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="font-label text-xs uppercase tracking-widest text-secondary">{item.label}</span>
+                    <span className="text-sm text-white font-medium">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recently Sourced */}
+      <section className="py-24 md:py-32 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+              <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">The Source</span>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Recently Sourced</h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {FEATURED_VEHICLES.map((vehicle) => (
+              <div key={vehicle.name} className="group bg-surface-high overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={vehicle.image}
+                    alt={vehicle.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute top-3 right-3 bg-accent text-on-accent px-2 py-0.5 font-label text-[10px] font-bold tracking-widest">
+                    GRADE {vehicle.grade}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-headline font-bold text-sm uppercase tracking-tight text-white mb-2">{vehicle.name}</h3>
+                  <div className="flex justify-between items-center">
+                    <span className="font-headline text-lg font-bold text-accent">{vehicle.price}</span>
+                    <span className="font-label text-[9px] tracking-widest uppercase text-outline">Auction Won</span>
                   </div>
                 </div>
               </div>
-              <div className="p-8 md:p-12 border border-white/5 flex flex-col justify-between min-h-[300px]">
-                <div>
-                  <span className="font-headline text-4xl font-black text-white/10 block mb-4">03</span>
-                  <h3 className="font-headline text-2xl font-bold text-white mb-4 uppercase">Vehicle Selection</h3>
-                  <p className="font-body text-on-surface-variant leading-relaxed">We present a curated shortlist of vehicles that meet our strict internal quality benchmarks for your review.</p>
-                </div>
-                <div className="mt-8 grid grid-cols-3 gap-2">
-                  <div className="aspect-square bg-surface-highest"></div>
-                  <div className="aspect-square bg-surface-highest"></div>
-                  <div className="aspect-square bg-white"></div>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services — Japan Sourcing & Global Export */}
+      <section className="py-24 md:py-32 bg-surface">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Our Services</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Domestic & Global Vehicle Sourcing</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="bg-surface-low p-10 md:p-14 group hover:bg-surface-high transition-colors relative overflow-hidden">
+              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">JP</span>
+              <div className="relative z-10">
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">Domestic</span>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Japan Sourcing</h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">Purchase and delivery within Japan through the auction network. Full registration, preparation, and domestic transport.</p>
+                <Link to="/japan-sourcing" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
+                  Explore Japan Sourcing
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
               </div>
             </div>
 
-            {/* Step 4 & 5 */}
-            <div className="md:col-span-7 bg-surface-container p-8 md:p-12">
-              <span className="font-headline text-4xl font-black text-white/10 block mb-4">04</span>
-              <h3 className="font-headline text-2xl font-bold text-white mb-6 uppercase">Inspection & Verification</h3>
-              <p className="font-body text-on-surface-variant leading-relaxed mb-8">Rigorous decoding of the Japanese auction sheet. We verify mechanical grade, exterior condition, and interior cleanliness to ensure zero surprises.</p>
-              <div className="bg-surface-lowest p-6 border border-white/10">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="font-label text-[10px] text-secondary">SPECIMEN: AUCTION SHEET #8821</span>
-                  <span className="font-label text-[10px] bg-primary text-on-primary px-2 py-0.5">VERIFIED</span>
-                </div>
-                <div className="h-32 bg-surface-high"></div>
-              </div>
-            </div>
-            <div className="md:col-span-5 flex items-center justify-center p-8 md:p-12">
-              <div>
-                <span className="font-headline text-4xl font-black text-white/10 block mb-4">05</span>
-                <h3 className="font-headline text-2xl font-bold text-white mb-4 uppercase">Price Confirmation</h3>
-                <p className="font-body text-on-surface-variant leading-relaxed">Calculation of the total landed cost including auction fees, taxes, and shipping logistics.</p>
-              </div>
-            </div>
-
-            {/* Steps 6, 7, 8 */}
-            <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <div className="bg-surface-low p-8 border-t-4 border-white">
-                <span className="font-headline text-xl font-bold text-white block mb-2">06</span>
-                <h4 className="font-label uppercase tracking-widest text-xs text-secondary mb-4">Deposit Confirmation</h4>
-                <p className="text-sm font-body text-on-surface-variant">Security deposit required to authorize live bidding protocols.</p>
-              </div>
-              <div className="bg-primary p-8 text-on-primary">
-                <span className="font-headline text-xl font-bold block mb-2">07</span>
-                <h4 className="font-label uppercase tracking-widest text-xs text-on-primary/70 mb-4">Auction Bidding</h4>
-                <p className="text-sm font-body">Live participation in the auction house. Our team executes bids with millisecond precision.</p>
-              </div>
-              <div className="bg-surface-low p-8 border-t-4 border-white">
-                <span className="font-headline text-xl font-bold text-white block mb-2">08</span>
-                <h4 className="font-label uppercase tracking-widest text-xs text-secondary mb-4">Final Payment</h4>
-                <p className="text-sm font-body text-on-surface-variant">Settlement of the balance upon successful auction acquisition.</p>
-              </div>
-            </div>
-
-            {/* Step 9 */}
-            <div className="md:col-span-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-surface-highest p-8 md:p-12">
-              <div className="md:w-1/2">
-                <span className="font-headline text-5xl md:text-6xl font-black text-white/10 block mb-4">09</span>
-                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white mb-6 uppercase tracking-tight">Delivery & Handover</h3>
-                <p className="font-body text-on-surface-variant leading-relaxed text-lg">Final logistics execution. We handle shipping documentation, local compliance, and delivery to your doorstep.</p>
-              </div>
-              <div className="md:w-1/2 h-48 md:h-64 w-full overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&q=80&w=800"
-                  alt="Delivery"
-                  className="w-full h-full object-cover grayscale"
-                  referrerPolicy="no-referrer"
-                />
+            <div className="bg-surface-low p-10 md:p-14 group hover:bg-surface-high transition-colors relative overflow-hidden">
+              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">GL</span>
+              <div className="relative z-10">
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">International</span>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Global Export</h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">End-to-end export from Japan, including documentation, shipping, and port delivery worldwide.</p>
+                <Link to="/global-export" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
+                  Explore Global Export
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section — Inverted */}
-      <section className="py-32 bg-primary text-on-primary overflow-hidden relative">
+      {/* You Stay in Control */}
+      <section className="py-24 md:py-28 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8 text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="w-16 h-16 mx-auto mb-8 border border-accent/30 flex items-center justify-center">
+              <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter mb-6">You Stay in Control</h2>
+            <p className="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+              No bidding or purchase is made without your approval. Every step remains aligned with your approved requirements and budget.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 bg-accent text-on-accent overflow-hidden relative">
         <div className="container mx-auto px-6 lg:px-8 text-center relative z-10">
-          <span className="font-label text-[10px] tracking-[0.4em] uppercase font-bold mb-6 block">Ready to acquire?</span>
-          <h2 className="font-headline text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase mb-8 leading-none">
-            Engineer Your<br />Acquisition
+          <span className="font-label text-[10px] tracking-[0.4em] uppercase font-bold mb-6 block opacity-60">Start Today</span>
+          <h2 className="font-headline text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase mb-4 leading-none">
+            Start Your Vehicle<br />Sourcing
           </h2>
-          <p className="font-body text-on-primary/80 text-xl max-w-2xl mx-auto mb-12">
-            Start the process today and gain direct access to the world's most transparent automotive inventory.
+          <p className="font-body text-on-accent/70 text-lg max-w-2xl mx-auto mb-12">
+            Submit your requirements to begin sourcing from Japan's auction network.
           </p>
           <Link
-            to="/global-export"
-            className="inline-block bg-surface text-white px-12 py-6 font-label uppercase tracking-widest text-sm hover:bg-surface-highest transition-all duration-300 active:scale-95"
+            to="/request"
+            className="inline-block bg-surface text-white px-12 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-highest transition-all duration-300 active:scale-95"
           >
             Request a Vehicle
           </Link>
         </div>
-        {/* Decorative watermark */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none overflow-hidden flex flex-wrap gap-4 items-center justify-center">
-          <span className="text-[12rem] font-black font-headline leading-none">KMT</span>
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none select-none overflow-hidden flex items-center justify-center">
+          <span className="text-[14rem] font-black font-headline leading-none tracking-tighter">KMT</span>
         </div>
       </section>
     </div>

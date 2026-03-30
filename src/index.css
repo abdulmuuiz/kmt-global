@@ -25,6 +25,11 @@
   --color-outline: #919191;
   --color-outline-variant: #474747;
 
+  /* Electric Cyan Accent */
+  --color-accent: #00f0ff;
+  --color-accent-dim: #00c4d4;
+  --color-on-accent: #0a0a0a;
+
   /* Containers */
   --color-primary-container: #d4d4d4;
   --color-secondary-container: #464747;

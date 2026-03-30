@@ -7,8 +7,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import GlobalExport from './pages/GlobalExport';
-// import DomesticSales from './pages/DomesticSales'; // Japan Sourcing — commented out for now
-import About from './pages/About';
+import JapanSourcing from './pages/JapanSourcing';
+import Info from './pages/Info';
+import RequestVehicle from './pages/RequestVehicle';
 
 export default function App() {
   return (
@@ -17,8 +18,9 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="global-export" element={<GlobalExport />} />
-          {/* <Route path="domestic-sales" element={<DomesticSales />} /> */}
-          <Route path="about" element={<About />} />
+          <Route path="japan-sourcing" element={<JapanSourcing />} />
+          <Route path="info" element={<Info />} />
+          <Route path="request" element={<RequestVehicle />} />
         </Route>
       </Routes>
     </BrowserRouter>

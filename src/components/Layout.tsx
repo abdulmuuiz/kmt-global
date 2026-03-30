@@ -7,9 +7,9 @@ export default function Layout() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    // { name: 'Japan Sourcing', path: '/domestic-sales' }, // commented out for now
+    { name: 'Japan Sourcing', path: '/japan-sourcing' },
     { name: 'Global Export', path: '/global-export' },
-    { name: 'Info', path: '/about' },
+    { name: 'Info', path: '/info' },
   ];
 
   return (
@@ -31,7 +31,7 @@ export default function Layout() {
                 to={link.path}
                 className={`font-label uppercase tracking-[0.1em] text-[0.75rem] font-medium transition-colors duration-200 ${
                   location.pathname === link.path
-                    ? 'text-white border-b-2 border-white pb-1'
+                    ? 'text-white border-b-2 border-accent pb-1'
                     : 'text-secondary hover:text-white'
                 }`}
               >
@@ -43,8 +43,8 @@ export default function Layout() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <Link
-              to="/global-export"
-              className="hidden sm:block bg-primary text-on-primary px-6 py-2 text-[0.75rem] font-bold uppercase tracking-widest hover:bg-secondary transition-all active:scale-95"
+              to="/request"
+              className="hidden sm:block bg-accent text-on-accent px-6 py-2 text-[0.75rem] font-bold uppercase tracking-widest hover:bg-accent-dim transition-all active:scale-95"
             >
               Request a Vehicle
             </Link>
@@ -80,8 +80,8 @@ export default function Layout() {
                 </Link>
               ))}
               <Link
-                to="/global-export"
-                className="block mt-4 bg-primary text-on-primary px-4 py-3 text-xs font-bold uppercase tracking-widest text-center"
+                to="/request"
+                className="block mt-4 bg-accent text-on-accent px-4 py-3 text-xs font-bold uppercase tracking-widest text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Request a Vehicle
@@ -91,7 +91,7 @@ export default function Layout() {
         )}
       </nav>
 
-      {/* Main Content — offset for fixed nav */}
+      {/* Main Content */}
       <main className="flex-grow pt-[72px]">
         <Outlet />
       </main>
@@ -110,27 +110,27 @@ export default function Layout() {
           </div>
 
           <div>
-            <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Service</h4>
+            <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Services</h4>
             <ul className="space-y-4">
-              {/* <li><Link to="/domestic-sales" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Japan Sourcing</Link></li> */}
-              <li><Link to="/global-export" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Global Export</Link></li>
-              <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Auction Rules</Link></li>
+              <li><Link to="/japan-sourcing" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Japan Sourcing</Link></li>
+              <li><Link to="/global-export" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Global Export</Link></li>
+              <li><Link to="/request" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Request a Vehicle</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Legal</h4>
+            <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Information</h4>
             <ul className="space-y-4">
-              <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Terms of Service</Link></li>
-              <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Privacy Policy</Link></li>
-              <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Export Compliance</Link></li>
+              <li><Link to="/info#how-auctions-work" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">How Auctions Work</Link></li>
+              <li><Link to="/info#pricing" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Service Fees</Link></li>
+              <li><Link to="/info#shipping" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Shipping Methods</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Connect</h4>
             <ul className="space-y-4">
-              <li><a href="mailto:info@kmtglobal.jp" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-white transition-all">Contact Us</a></li>
+              <li><a href="mailto:info@kmtglobal.jp" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Contact Us</a></li>
               <li><span className="font-label text-[0.75rem] tracking-widest uppercase text-outline">Tokyo HQ</span></li>
             </ul>
           </div>
