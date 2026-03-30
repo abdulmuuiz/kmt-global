@@ -125,9 +125,8 @@ export default function Info() {
               <p className="text-sm text-on-surface-variant leading-relaxed">
                 The results are compiled into an official inspection report, commonly known as the <span className="text-accent font-medium">auction sheet</span>. This report includes written remarks and a condition diagram, providing a clear and consistent view of the vehicle's condition.
               </p>
-              {/* Placeholder for auction sheet visual */}
-              <div className="mt-8 bg-surface-lowest p-8 text-center border border-white/5">
-                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-outline">Auction Sheet Visual — Designer Asset Needed</span>
+              <div className="mt-8 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                <img src="/auction-sheet.jpeg" alt="USS Auction Sheet" className="w-full h-auto object-contain" />
               </div>
             </div>
 
@@ -274,6 +273,10 @@ export default function Info() {
             <div className="bg-surface-low p-8 md:p-10">
               <h3 className="font-headline text-lg font-bold text-white uppercase tracking-tight mb-6">For International Export</h3>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-6">Vehicles purchased for export are prepared through a structured export process:</p>
+              <div className="mb-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                <img src="/export-certificate.jpeg" alt="Export Certificate Sample" className="w-full h-auto object-contain" />
+                <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-2 pb-1">Sample Export Certificate (details partially hidden for privacy)</p>
+              </div>
               <ul className="space-y-2">
                 {[
                   'Export documentation and deregistration',

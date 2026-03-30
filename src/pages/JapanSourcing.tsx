@@ -20,6 +20,7 @@ const STEPS = [
     title: 'Vehicle Selection',
     desc: 'A selection of suitable vehicles is presented based on your requirements. Each option is reviewed against your specified criteria.',
     details: ['Selection based on condition, mileage, and price', 'Detailed photos and official auction inspection reports provided'],
+    image: '/vehicle-selection.png',
   },
   {
     num: '04',
@@ -28,25 +29,20 @@ const STEPS = [
     details: ['Exterior and interior condition assessment', 'Recorded damage and repair history', 'Supporting photos for review'],
     note: 'Optional: the vehicle can be inspected directly at the auction site prior to bidding.',
     link: { text: 'Learn about auction sheets', to: '/info#auction-sheet' },
+    image: '/auction-sheet-review.png',
   },
   {
     num: '05',
-    title: 'Price Confirmation',
-    desc: 'Once you have selected a vehicle, a maximum bid is agreed based on current market conditions and the auction listing.',
-    note: 'This bid is determined by considering vehicle condition, mileage, and recent market trends.',
-  },
-  {
-    num: '06',
-    title: 'Deposit Confirmation',
-    desc: 'To proceed with auction participation, a deposit is required in advance.',
+    title: 'Price Confirmation & Deposit',
+    desc: 'After selecting your vehicle, we provide recent sales data to give you a clear view of current market values. A maximum bid is then agreed based on the vehicle\'s condition, mileage, auction grade, and market trends. This defines the highest price we will bid on your behalf, ensuring a strategic approach while protecting you from overpaying.',
     deposits: [
       { range: 'Under ¥1,000,000', amount: '¥100,000' },
       { range: '¥1,000,000 or more', amount: '10% of market price' },
     ],
-    note: 'The deposit is applied toward the purchase of your approved vehicle. All actions are carried out based on your approval.',
+    note: 'Your deposit is applied strictly toward your approved vehicle purchase. No action is taken without your confirmation.',
   },
   {
-    num: '07',
+    num: '06',
     title: 'Auction Bidding',
     desc: 'Once the deposit is confirmed, bidding is conducted through Japan\'s auction network based on your approved conditions.',
     details: ['All bids placed within your pre-approved maximum', 'Successful bid: vehicle secured, process moves forward', 'Unsuccessful bid: sourcing continues in upcoming auctions'],
@@ -54,22 +50,32 @@ const STEPS = [
     link: { text: 'How auctions work', to: '/info#how-auctions-work' },
   },
   {
-    num: '08',
+    num: '07',
     title: 'Final Payment',
-    desc: 'Once your vehicle is successfully secured, a final invoice is issued.',
-    details: ['Auction invoice price — exact amount paid at auction', 'Service fee', 'Domestic transport within Japan'],
-    note: 'Payment is required within 3 working days after invoice issuance.',
+    desc: 'Once your vehicle is successfully secured, a final invoice is issued covering:',
+    details: ['Auction invoice price — exact amount paid at auction', 'Service fee', 'Domestic transport within Japan, depending on the auction location'],
+    note: 'The official auction invoice is shared for verification, reflecting the confirmed purchase amount without adjustment. To ensure smooth processing and avoid delays, payment is required within 3 working days after invoice issuance.',
     link: { text: 'View service fees', to: '/info#pricing' },
     extra: {
       title: 'Vehicle Registration & Preparation (On Request)',
-      items: ['Registration procedures (inspection, documentation, fees)', 'Vehicle preparation (maintenance, servicing)', 'Interior and exterior detailing, premium finishing and glass coating'],
+      desc: 'Registration and vehicle preparation can also be arranged as part of the process. These services are not included in the standard service fee — they are offered on request and reflected in the final invoice accordingly.',
+      items: [
+        'Registration-related procedures (inspection, documentation, and associated fees)',
+        'Vehicle preparation (maintenance, inspection, and required servicing)',
+        'Interior and exterior detailing, including premium finishing and glass coating',
+      ],
+      note: 'Payment is completed based on the issued invoice to proceed with the process.',
     },
   },
   {
-    num: '09',
+    num: '08',
     title: 'Delivery & Handover',
     desc: 'Once all procedures are completed, the vehicle is prepared for delivery.',
-    details: ['Delivery arranged based on your location and requirements', 'All necessary documentation provided', 'Guidance through final steps including vehicle collection or registration'],
+    details: [
+      'Delivery arrangements are made based on your location and requirements',
+      'All necessary documentation is provided as part of the handover process',
+      'You are guided through the final steps, including vehicle collection or registration completion where applicable',
+    ],
   },
 ];
 
@@ -169,9 +175,12 @@ export default function JapanSourcing() {
                   )}
 
                   {step.extra && (
-                    <div className="bg-surface-lowest p-6 mb-6 border-l-2 border-accent/30">
-                      <h4 className="font-headline text-sm font-bold text-white uppercase tracking-wide mb-3">{step.extra.title}</h4>
-                      <ul className="space-y-2">
+                    <div className="bg-accent/5 border border-accent/20 p-6 md:p-8 mb-6">
+                      <h4 className="font-headline text-base font-bold text-accent uppercase tracking-wide mb-3">{step.extra.title}</h4>
+                      {step.extra.desc && (
+                        <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{step.extra.desc}</p>
+                      )}
+                      <ul className="space-y-2 mb-4">
                         {step.extra.items.map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm text-secondary">
                             <span className="text-accent mt-1.5 text-[6px]">&#9632;</span>
@@ -179,6 +188,15 @@ export default function JapanSourcing() {
                           </li>
                         ))}
                       </ul>
+                      {step.extra.note && (
+                        <p className="text-xs text-outline leading-relaxed italic">{step.extra.note}</p>
+                      )}
+                    </div>
+                  )}
+
+                  {step.image && (
+                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                      <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
                     </div>
                   )}
 

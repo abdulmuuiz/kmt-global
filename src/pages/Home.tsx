@@ -129,7 +129,7 @@ export default function Home() {
               {
                 num: '04',
                 title: 'We Bid & Secure',
-                desc: 'Bidding is conducted strictly within your approved limit. Vehicle secured and shipped to you.',
+                desc: 'Bidding is conducted strictly within your approved limit. Vehicle secured and delivered to you.',
                 icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />,
               },
             ].map((step) => (
@@ -207,8 +207,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recently Sourced */}
+      {/* Services — Japan Sourcing & Global Export */}
       <section className="py-24 md:py-32 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Our Services</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Domestic & Global Vehicle Sourcing</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="bg-surface-high p-10 md:p-14 group hover:bg-surface-variant transition-colors relative overflow-hidden">
+              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">JP</span>
+              <div className="relative z-10">
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">Domestic</span>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Japan Sourcing</h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">Purchase and delivery within Japan through the auction network. Full registration, preparation, and domestic transport.</p>
+                <Link to="/japan-sourcing" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
+                  Explore Japan Sourcing
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-surface-high p-10 md:p-14 group hover:bg-surface-variant transition-colors relative overflow-hidden">
+              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">GL</span>
+              <div className="relative z-10">
+                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">International</span>
+                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Global Export</h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">End-to-end export from Japan, including documentation, shipping, and port delivery worldwide.</p>
+                <Link to="/global-export" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
+                  Explore Global Export
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recently Sourced */}
+      <section className="py-24 md:py-32 bg-surface">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
@@ -233,51 +271,10 @@ export default function Home() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-headline font-bold text-sm uppercase tracking-tight text-white mb-2">{vehicle.name}</h3>
-                  <div className="flex justify-between items-center">
-                    <span className="font-headline text-lg font-bold text-accent">{vehicle.price}</span>
-                    <span className="font-label text-[9px] tracking-widest uppercase text-outline">Auction Won</span>
-                  </div>
+                  <span className="font-headline text-lg font-bold text-accent">{vehicle.price}</span>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services — Japan Sourcing & Global Export */}
-      <section className="py-24 md:py-32 bg-surface">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Our Services</span>
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Domestic & Global Vehicle Sourcing</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            <div className="bg-surface-low p-10 md:p-14 group hover:bg-surface-high transition-colors relative overflow-hidden">
-              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">JP</span>
-              <div className="relative z-10">
-                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">Domestic</span>
-                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Japan Sourcing</h3>
-                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">Purchase and delivery within Japan through the auction network. Full registration, preparation, and domestic transport.</p>
-                <Link to="/japan-sourcing" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
-                  Explore Japan Sourcing
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-surface-low p-10 md:p-14 group hover:bg-surface-high transition-colors relative overflow-hidden">
-              <span className="font-headline text-[8rem] font-black text-white/[0.02] absolute -bottom-8 -right-4 leading-none select-none">GL</span>
-              <div className="relative z-10">
-                <span className="font-label text-[10px] tracking-[0.2em] uppercase text-accent block mb-4">International</span>
-                <h3 className="font-headline text-2xl md:text-3xl font-bold text-white uppercase tracking-tight mb-4">Global Export</h3>
-                <p className="text-sm text-on-surface-variant leading-relaxed mb-8">End-to-end export from Japan, including documentation, shipping, and port delivery worldwide.</p>
-                <Link to="/global-export" className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-accent hover:text-white transition-colors">
-                  Explore Global Export
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>

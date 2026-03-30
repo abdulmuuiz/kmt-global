@@ -20,6 +20,7 @@ const STEPS = [
     title: 'Vehicle Selection',
     desc: 'We carefully shortlist vehicles that match your exact requirements, ensuring only verified and suitable options are presented for your review.',
     details: ['Selection based on condition, mileage, and price', 'Supported by detailed photos and auction sheets'],
+    image: '/vehicle-selection.png',
   },
   {
     num: '04',
@@ -28,11 +29,12 @@ const STEPS = [
     details: ['Overall condition grade', 'Verified mileage', 'Exterior damage markings', 'Interior condition notes', 'Inspector remarks'],
     note: 'We review the auction sheet, provide clear translations, and offer professional guidance so you fully understand the vehicle\'s condition.',
     link: { text: 'Learn about auction sheets', to: '/info#auction-sheet' },
+    image: '/auction-sheet-review.png',
   },
   {
     num: '05',
     title: 'Price Confirmation & Deposit',
-    desc: 'Once you confirm your selected vehicle, a maximum bid is agreed based on current market conditions.',
+    desc: 'After selecting your vehicle, we provide recent sales data to give you a clear view of current market values. A maximum bid is then agreed based on the vehicle\'s condition, mileage, auction grade, and market trends. This defines the highest price we will bid on your behalf, ensuring a strategic approach while protecting you from overpaying.',
     deposits: [
       { range: 'Under ¥1,000,000', amount: '¥100,000' },
       { range: '¥1,000,000 or more', amount: '10% of market price' },
@@ -60,7 +62,8 @@ const STEPS = [
     title: 'Export Preparation',
     desc: 'Once payment is confirmed, export preparation begins.',
     details: ['Vehicle deregistration in Japan', 'Export certificate issuance', 'Documentation preparation', 'Inland transport to shipping port'],
-    note: 'All documentation is prepared in line with export regulations.',
+    note: 'All documentation is prepared in line with export regulations. Sample export certificate shown below (details partially hidden for privacy).',
+    image: '/export-certificate.jpeg',
   },
   {
     num: '09',
@@ -169,6 +172,12 @@ export default function GlobalExport() {
                           <span className="font-headline text-xl font-bold text-accent">{dep.amount}</span>
                         </div>
                       ))}
+                    </div>
+                  )}
+
+                  {step.image && (
+                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                      <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
                     </div>
                   )}
 
