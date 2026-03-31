@@ -14,6 +14,7 @@ const STEPS = [
     title: 'Auction Search',
     desc: 'With access to 140+ auction houses across Japan, we source vehicles directly from the market based on your requirements.',
     details: ['Real-time sourcing from auctions', 'Additional access through dealer and private networks'],
+    image: '/auction-search.jpeg',
   },
   {
     num: '03',

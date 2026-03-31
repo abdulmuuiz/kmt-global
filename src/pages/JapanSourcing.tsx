@@ -11,9 +11,10 @@ const STEPS = [
   },
   {
     num: '02',
-    title: 'Auction Sourcing',
+    title: 'Auction Search',
     desc: 'Vehicles are sourced through Japan\'s dealer-only auction network, where most used vehicles are processed before reaching dealerships.',
     details: ['Verified condition, mileage, and inspection reports', 'Suitable vehicles identified and presented for review'],
+    image: '/auction-search.jpeg',
   },
   {
     num: '03',
@@ -195,8 +196,8 @@ export default function JapanSourcing() {
                   )}
 
                   {step.image && (
-                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
-                      <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
+                    <div className="mt-6 overflow-hidden rounded-sm">
+                      <img src={step.image} alt={step.title} className="w-full h-auto object-cover" />
                     </div>
                   )}
 
