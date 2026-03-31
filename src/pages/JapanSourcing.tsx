@@ -196,8 +196,8 @@ export default function JapanSourcing() {
                   )}
 
                   {step.image && (
-                    <div className="mt-6 overflow-hidden rounded-sm">
-                      <img src={step.image} alt={step.title} className="w-full h-auto object-cover" />
+                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                      <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
                     </div>
                   )}
 
