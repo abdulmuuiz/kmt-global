@@ -307,7 +307,7 @@ export default function Info() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div className="bg-surface-lowest p-2 border border-white/5 overflow-hidden">
-              <img src="/Auction official invoice.jpg.jpeg" alt="Official Auction Invoice Sample" className="w-full h-auto object-contain" />
+              <img src="/auction-invoice.jpeg" alt="Official Auction Invoice Sample" className="w-full h-auto object-contain" />
               <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-2 pb-1">Sample Auction Invoice (details partially hidden for privacy)</p>
             </div>
             <div className="space-y-4">
