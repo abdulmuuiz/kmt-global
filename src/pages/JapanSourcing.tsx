@@ -56,6 +56,7 @@ const STEPS = [
     desc: 'Once your vehicle is successfully secured, a final invoice is issued covering:',
     details: ['Auction invoice price — exact amount paid at auction', 'Service fee', 'Domestic transport within Japan, depending on the auction location'],
     note: 'The official auction invoice is shared for verification, reflecting the confirmed purchase amount without adjustment. To ensure smooth processing and avoid delays, payment is required within 3 working days after invoice issuance.',
+    image: '/Auction official invoice.jpg.jpeg',
     link: { text: 'View service fees', to: '/info#pricing' },
     extra: {
       title: 'Vehicle Registration & Preparation (On Request)',
