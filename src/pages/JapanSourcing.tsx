@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ImageModal from '../components/ImageModal';
+import Accordion from '../components/Accordion';
 
 const STEPS = [
   {
@@ -82,6 +85,8 @@ const STEPS = [
 ];
 
 export default function JapanSourcing() {
+  const [modalImg, setModalImg] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <div>
       {/* Hero */}
@@ -197,8 +202,14 @@ export default function JapanSourcing() {
                   )}
 
                   {step.image && (
-                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                    <div
+                      className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden cursor-zoom-in group relative"
+                      onClick={() => setModalImg({ src: step.image!, alt: step.title })}
+                    >
                       <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-surface-high/90 text-white text-[10px] font-label tracking-widest uppercase px-3 py-1.5">Click to enlarge</span>
+                      </div>
                     </div>
                   )}
 
@@ -216,6 +227,55 @@ export default function JapanSourcing() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+          <div className="mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">FAQ</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Frequently Asked Questions</h2>
+          </div>
+
+          <Accordion items={[
+            {
+              q: 'Do you benefit if the car price is higher?',
+              a: <><p>No. We operate on a fixed service fee, not a commission-based model.</p><p>This means we do not benefit from higher vehicle prices — our focus is to help you secure the right car at a fair market price.</p></>,
+            },
+            {
+              q: "How do I know I'm not being overcharged?",
+              a: <><p>You receive the official auction invoice showing exactly what we paid for the vehicle.</p><p>Our service fee is fixed, and we do not add hidden margins to vehicle prices. This keeps pricing transparent and easy to understand.</p></>,
+            },
+            {
+              q: 'Do I need to pay anything before selecting a vehicle?',
+              a: <><p>No — there are no upfront charges.</p><p>Vehicle sourcing, auction sheet analysis, and translations are provided free of cost. You only pay once you have selected a vehicle and decided to proceed with bidding.</p></>,
+            },
+            {
+              q: 'Why is a deposit required?',
+              a: <><p>A deposit is required only after you have selected a vehicle and decided to proceed with bidding.</p><p>It confirms your intent to purchase and allows us to participate in auctions on your behalf. The deposit is applied toward your purchase and remains refundable until bidding begins.</p></>,
+            },
+            {
+              q: "What if I don't win the auction?",
+              a: <p>If your bid is unsuccessful, we continue sourcing and participate in upcoming auctions based on your requirements. Your deposit remains allocated to your request and can either be reused for future auctions or refunded based on your preference.</p>,
+            },
+            {
+              q: 'What are the total costs after purchasing the vehicle in Japan?',
+              a: <><p>In addition to the vehicle price and our service fee, there may be additional costs depending on your requirements. These may include:</p><ul className="mt-2 space-y-1">{['Registration and name transfer','Shaken (inspection)','Road tax and insurance','Delivery within Japan','Optional preparation or maintenance'].map(i => <li key={i} className="flex items-start gap-2"><span className="text-accent mt-1.5 text-[6px]">&#9632;</span>{i}</li>)}</ul><p className="mt-3">We can handle all of these processes if required. These services are optional and charged separately based on the vehicle and your location. A full cost breakdown is always provided before bidding, so you know exactly what to expect.</p></>,
+            },
+            {
+              q: 'Can you handle registration, name transfer, and delivery in Japan?',
+              a: <><p>Yes. We can arrange registration, documentation, shaken, and delivery to your location.</p><p>These services are handled based on your requirements and quoted separately.</p></>,
+            },
+            {
+              q: 'How do I know the condition of the car?',
+              a: <><p>Each vehicle comes with an official auction inspection report prepared by certified inspectors.</p><p>This includes condition grading, mileage verification, and notes on any damage or wear. We review these details with you before any decision is made.</p></>,
+            },
+            {
+              q: 'Can I get additional photos or verification of the vehicle?',
+              a: <><p>Auction listings already include photos and inspection reports, which provide a reliable overview of the vehicle.</p><p>If needed, we can request additional photos directly from the auction. The cost varies depending on the auction, but is typically around ¥2,000–¥3,000. We confirm the exact amount in advance and provide the official invoice.</p></>,
+            },
+          ]} />
         </div>
       </section>
 
@@ -237,6 +297,8 @@ export default function JapanSourcing() {
           </Link>
         </div>
       </section>
+
+      {modalImg && <ImageModal src={modalImg.src} alt={modalImg.alt} onClose={() => setModalImg(null)} />}
     </div>
   );
 }

@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ImageModal from '../components/ImageModal';
+import Accordion from '../components/Accordion';
 
 const STEPS = [
   {
@@ -82,6 +85,8 @@ const STEPS = [
 ];
 
 export default function GlobalExport() {
+  const [modalImg, setModalImg] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <div>
       {/* Hero */}
@@ -182,15 +187,25 @@ export default function GlobalExport() {
                   )}
 
                   {step.image && (
-                    <div className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                    <div
+                      className="mt-6 bg-surface-lowest p-2 border border-white/5 overflow-hidden cursor-zoom-in group relative"
+                      onClick={() => setModalImg({ src: step.image!, alt: step.title })}
+                    >
                       <img src={step.image} alt={step.title} className="w-full h-auto object-contain" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-surface-high/90 text-white text-[10px] font-label tracking-widest uppercase px-3 py-1.5">Click to enlarge</span>
+                      </div>
                     </div>
                   )}
 
                   {step.shippingImages && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                       {step.shippingImages.map((img) => (
-                        <div key={img.label} className="bg-surface-lowest border border-white/5 overflow-hidden">
+                        <div
+                          key={img.label}
+                          className="bg-surface-lowest border border-white/5 overflow-hidden cursor-zoom-in group relative"
+                          onClick={() => setModalImg({ src: img.src, alt: img.alt })}
+                        >
                           <img src={img.src} alt={img.alt} className="w-full h-36 object-cover" />
                           <p className="text-[10px] font-label tracking-[0.2em] uppercase text-outline text-center py-2">{img.label}</p>
                         </div>
@@ -244,6 +259,69 @@ export default function GlobalExport() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-surface-lowest">
+        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+          <div className="mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">FAQ</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Frequently Asked Questions</h2>
+          </div>
+
+          <Accordion items={[
+            {
+              q: 'Do you benefit if the car price is higher?',
+              a: <><p>No. We operate on a fixed service fee, not a commission-based model.</p><p>This means we don&apos;t benefit from higher vehicle prices — our goal is to help you secure the right car at the correct market value, without unnecessary overpaying.</p></>,
+            },
+            {
+              q: "How do I know I'm not being overcharged?",
+              a: <><p>You receive the official auction invoice showing exactly what we paid for the vehicle.</p><p>Our service fee is fixed, and we do not add hidden margins to vehicle prices. This allows you to clearly see where your money is going and ensures pricing remains transparent throughout the process.</p></>,
+            },
+            {
+              q: 'Do I need to pay anything before selecting a vehicle?',
+              a: <><p>No — we do not charge anything to start.</p><p>Vehicle sourcing, auction sheet analysis, and translations are all provided free of cost. You only pay once you have selected a vehicle and decided to proceed with bidding, at which point a deposit is required.</p></>,
+            },
+            {
+              q: 'Why is a deposit required?',
+              a: <><p>A deposit is required only after you have selected a vehicle and decided to proceed with bidding.</p><p>It confirms your intent to purchase and allows us to participate in auctions on your behalf within a defined budget. The deposit is applied toward your purchase and remains refundable until bidding begins.</p></>,
+            },
+            {
+              q: "What if I don't win the auction?",
+              a: <><p>If your bid is unsuccessful, we continue sourcing and participate in upcoming auctions based on your requirements.</p><p>Your deposit remains allocated to your request and can either be reused for future auctions or refunded based on your preference.</p></>,
+            },
+            {
+              q: "What if I send money and don't receive the car?",
+              a: <><p>Every transaction is tied to a specific vehicle and follows a structured, documented process. You receive:</p><ul className="mt-2 space-y-1">{['Auction invoice and purchase confirmation','Export documentation','Shipping details and tracking'].map(i => <li key={i} className="flex items-start gap-2"><span className="text-accent mt-1.5 text-[6px]">&#9632;</span>{i}</li>)}</ul><p className="mt-3">This ensures full visibility from purchase through to delivery.</p></>,
+            },
+            {
+              q: 'How do I know the condition of the car?',
+              a: <><p>Each vehicle comes with an official auction inspection report prepared by certified inspectors. This includes:</p><ul className="mt-2 space-y-1">{['Condition grading','Mileage verification','Notes on damage or wear'].map(i => <li key={i} className="flex items-start gap-2"><span className="text-accent mt-1.5 text-[6px]">&#9632;</span>{i}</li>)}</ul><p className="mt-3">We review these reports with you and provide additional photos and insights before any decision is made.</p></>,
+            },
+            {
+              q: 'Can I get additional photos or verification of the vehicle?',
+              a: <><p>Auction listings already include photos and an official inspection report, which provide a reliable overview of the vehicle.</p><p>If you need additional photos or closer verification, we can request them directly from the auction. The cost varies depending on the auction, but is typically around ¥2,000–¥3,000. We will always confirm the exact amount with you in advance, and the request is supported by the official auction invoice.</p></>,
+            },
+            {
+              q: 'Do you handle export and shipping?',
+              a: <><p>Yes. We manage the full export process, including:</p><ul className="mt-2 space-y-1">{['Vehicle deregistration','Export documentation','Shipping arrangements (RoRo or container)'].map(i => <li key={i} className="flex items-start gap-2"><span className="text-accent mt-1.5 text-[6px]">&#9632;</span>{i}</li>)}</ul><p className="mt-3">All details are coordinated and shared with you to ensure a smooth and transparent process.</p></>,
+            },
+            {
+              q: 'Do you handle customs clearance and import regulations in my country?',
+              a: <><p>We handle the entire process in Japan — including purchase, documentation, and shipping to your destination port.</p><p>Customs clearance is carried out in your country, as import regulations vary by location and are managed locally. We provide all required export documents and are available to assist if you need guidance during the process. For final clearance, working with a local clearing agent in your country is recommended.</p></>,
+            },
+            {
+              q: "Do you return Japan's 10% consumption tax after export?",
+              a: <>
+                <p>In Japan, a 10% consumption tax is applied when a vehicle is purchased. When the vehicle is exported, this tax is refunded to the exporter as part of the export process.</p>
+                <p>We&apos;re fully transparent about this — we retain this refund as part of how our service is structured. This does not increase your total cost and allows us to operate on a low, fixed service fee while keeping vehicle pricing clear and free from hidden margins or commissions.</p>
+                <p>In many cases, companies that promote "tax returns" or partial refunds adjust their pricing elsewhere — often through higher service fees or built-in markups that are not always visible to the buyer.</p>
+                <p>Our approach is straightforward: you pay the actual auction price, plus a clearly defined service fee — with no hidden adjustments.</p>
+                <p className="text-accent font-medium mt-2">For high-volume importers, we offer a separate B2B model where this tax benefit can be shared. If you are importing regularly, we&apos;re happy to discuss a more tailored structure.</p>
+              </>,
+            },
+          ]} />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-32 bg-accent text-on-accent overflow-hidden relative">
         <div className="container mx-auto px-6 lg:px-8 text-center relative z-10">
@@ -261,6 +339,8 @@ export default function GlobalExport() {
           </Link>
         </div>
       </section>
+
+      {modalImg && <ImageModal src={modalImg.src} alt={modalImg.alt} onClose={() => setModalImg(null)} />}
     </div>
   );
 }
