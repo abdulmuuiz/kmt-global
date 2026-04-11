@@ -11,6 +11,7 @@ import GlobalExport from './pages/GlobalExport';
 import JapanSourcing from './pages/JapanSourcing';
 import Info from './pages/Info';
 import RequestVehicle from './pages/RequestVehicle';
+import About from './pages/About';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="japan-sourcing" element={<JapanSourcing />} />
           <Route path="info" element={<Info />} />
           <Route path="request" element={<RequestVehicle />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

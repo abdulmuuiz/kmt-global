@@ -93,7 +93,7 @@ export default function JapanSourcing() {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-surface-lowest">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=2000"
+            src="/hero-japan-sourcing.png"
             alt="Japan Sourcing"
             className="w-full h-full object-cover grayscale opacity-20"
             referrerPolicy="no-referrer"

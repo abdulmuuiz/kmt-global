@@ -1,33 +1,146 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FadeIn, StaggerChildren, StaggerItem } from '../components/AnimateIn';
 
-const FEATURED_VEHICLES = [
+const INQUIRIES = [
   {
-    name: '1999 Mazda RX-7 FD3S',
-    price: '¥7,250,000',
+    make: 'NISSAN',
+    model: 'Skyline',
+    year: '1998',
+    variant: '25 GT Turbo',
+    grade: 'R',
+    price: '¥3,700,000',
+    from: 'USA',
+    image: '/inquiry-skyline.jpeg',
+  },
+  {
+    make: 'SUBARU',
+    model: 'Forester',
+    year: '2019',
+    variant: 'Touring 4WD',
+    grade: '3.5',
+    price: '¥1,125,000',
+    from: 'New Zealand',
+    image: '/inquiry-forester.jpeg',
+  },
+  {
+    make: 'TOYOTA',
+    model: 'Prius',
+    year: '2015',
+    variant: "S Touring Selection G's",
+    grade: '3.5',
+    price: '¥755,000',
+    from: 'Australia',
+    image: '/inquiry-prius.jpeg',
+  },
+  {
+    make: 'VW',
+    model: 'Passat Variant',
+    year: '2017',
+    variant: 'TSI Elegance Line',
+    grade: '4',
+    price: '¥1,237,000',
+    from: 'UK',
+    image: '/inquiry-passat.jpeg',
+  },
+  {
+    make: 'TOYOTA',
+    model: 'Hiace',
+    year: '2021',
+    variant: 'GL',
     grade: '4.5',
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&q=80&w=800',
+    price: '¥3,350,000',
+    from: 'Japan',
+    image: '/inquiry-hiace.jpeg',
   },
   {
-    name: 'Nissan Silvia S15',
-    price: '¥4,100,000',
-    grade: '4.0',
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    name: 'Toyota Supra RZ',
-    price: '¥12,800,000',
-    grade: '4.5',
-    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=800',
-  },
-  {
-    name: '1992 Honda NSX',
-    price: '¥14,400,000',
-    grade: '5.0',
-    image: 'https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&q=80&w=800',
+    make: 'TOYOTA',
+    model: 'Prius Alpha',
+    year: '',
+    variant: 'S Touring Selection GR Sports',
+    grade: '3.5',
+    price: '¥1,351,000',
+    from: 'Ireland',
+    image: '/inquiry-prius-alpha.jpeg',
   },
 ];
+
+function RecentlySourcedCarousel() {
+  const [paused, setPaused] = useState(false);
+
+  return (
+    <section className="py-24 md:py-32 bg-surface overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8 mb-12">
+        <FadeIn>
+          <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Recent Inquiries</span>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Recently Sourced</h2>
+        </FadeIn>
+      </div>
+
+      <div className="overflow-hidden">
+        <div
+          className={paused ? 'animate-marquee-paused flex gap-5' : 'animate-marquee flex gap-5'}
+          style={{ width: 'max-content' }}
+        >
+          {[...INQUIRIES, ...INQUIRIES].map((v, i) => (
+            <div
+              key={i}
+              className="group relative w-72 shrink-0 bg-surface-high overflow-hidden cursor-default"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              {/* Image */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={v.image}
+                  alt={`${v.make} ${v.model}`}
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Default footer */}
+              <div className="p-4 flex items-center justify-between">
+                <span className="font-headline font-bold text-xs uppercase tracking-tight text-white">
+                  {v.make} {v.model} {v.year}
+                </span>
+                <span className="font-label text-[9px] tracking-widest uppercase text-outline">{v.from}</span>
+              </div>
+
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-surface/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <div className="space-y-3">
+                  <div>
+                    <span className="font-label text-[9px] tracking-[0.25em] uppercase text-accent block mb-0.5">Make & Model</span>
+                    <span className="font-headline font-bold text-base uppercase text-white">{v.make} {v.model} {v.year}</span>
+                  </div>
+                  <div>
+                    <span className="font-label text-[9px] tracking-[0.25em] uppercase text-outline block mb-0.5">Variant</span>
+                    <span className="text-sm text-secondary">{v.variant}</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <span className="font-label text-[9px] tracking-[0.25em] uppercase text-outline block mb-0.5">Grade</span>
+                      <span className="font-headline font-bold text-sm text-accent">{v.grade}</span>
+                    </div>
+                    <div>
+                      <span className="font-label text-[9px] tracking-[0.25em] uppercase text-outline block mb-0.5">Price</span>
+                      <span className="font-headline font-bold text-sm text-white">{v.price}</span>
+                    </div>
+                  </div>
+                  <div className="pt-2 border-t border-white/10 flex items-center gap-2">
+                    <svg className="w-3 h-3 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <span className="font-label text-[9px] tracking-widest uppercase text-secondary">Inquired from {v.from}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -36,7 +149,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-surface-lowest">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=2000"
+            src="/hero-home.png"
             alt="Japan Auction"
             className="w-full h-full object-cover grayscale opacity-25"
             referrerPolicy="no-referrer"
@@ -288,43 +401,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recently Sourced */}
-      <section className="py-24 md:py-32 bg-surface">
-        <div className="container mx-auto px-6 lg:px-8">
-          <FadeIn>
-            <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <div>
-                <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">The Source</span>
-                <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">Recently Sourced</h2>
-              </div>
-            </div>
-          </FadeIn>
-
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {FEATURED_VEHICLES.map((vehicle) => (
-              <StaggerItem key={vehicle.name}>
-                <div className="group bg-surface-high overflow-hidden">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={vehicle.image}
-                      alt={vehicle.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute top-3 right-3 bg-accent text-on-accent px-2 py-0.5 font-label text-[10px] font-bold tracking-widest">
-                      GRADE {vehicle.grade}
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-headline font-bold text-sm uppercase tracking-tight text-white mb-2">{vehicle.name}</h3>
-                    <span className="font-headline text-lg font-bold text-accent">{vehicle.price}</span>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
+      {/* Recently Sourced — Carousel */}
+      <RecentlySourcedCarousel />
 
       {/* You Stay in Control */}
       <FadeIn>

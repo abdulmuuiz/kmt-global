@@ -6,7 +6,13 @@ export default function Info() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-surface-lowest">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-surface-lowest via-surface/80 to-surface"></div>
+          <img
+            src="/hero-info.png"
+            alt="Info"
+            className="w-full h-full object-cover grayscale opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
         </div>
         <div className="container mx-auto px-6 lg:px-8 relative z-10 py-32">
           <div className="max-w-3xl">
@@ -128,6 +134,17 @@ export default function Info() {
               <div className="mt-8 bg-surface-lowest p-2 border border-white/5 overflow-hidden">
                 <img src="/auction-sheet.jpeg" alt="USS Auction Sheet" className="w-full h-auto object-contain" />
               </div>
+
+              <div className="mt-8">
+                <h4 className="font-label text-[10px] tracking-[0.2em] uppercase text-accent mb-4">How to Read an Auction Sheet</h4>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-4">
+                  Below is a simplified translation of a standard Japanese auction inspection sheet, highlighting the key areas that relate to condition and grading.
+                </p>
+                <div className="bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                  <img src="/auction-sheet-sample.png" alt="Annotated sample auction sheet with labels for vehicle details, auction grade, inspector's remarks, body condition, and sales points" className="w-full h-auto object-contain" />
+                </div>
+                <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-3">Sample auction sheet — annotated for clarity</p>
+              </div>
             </div>
 
             {/* Listing */}
@@ -167,8 +184,55 @@ export default function Info() {
         </div>
       </section>
 
+      {/* Auction Grade Guide */}
+      <section id="auction-grades" className="py-24 md:py-32 bg-surface-lowest scroll-mt-24">
+        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+          <div className="mb-16">
+            <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Grading System</span>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter mb-6">Japanese Auction Grade Guide</h2>
+            <p className="text-on-surface-variant leading-relaxed max-w-2xl">
+              Japanese auto auctions use a standardized grading system to indicate the overall condition of a vehicle at the time of inspection. While grading may vary slightly between auction houses, the general meaning remains consistent.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { grade: 'S / 6', title: 'Near-New', desc: 'Near-new condition with very low mileage and minimal wear.' },
+              { grade: '5', title: 'Excellent', desc: 'Excellent condition with only minor signs of use.' },
+              { grade: '4.5', title: 'Very Good', desc: 'Very good condition with light cosmetic imperfections.' },
+              { grade: '4', title: 'Good', desc: 'Good overall condition. May include small scratches, dents, or interior wear typical for its age.' },
+              { grade: '3.5', title: 'Average', desc: 'Average condition with visible wear. Minor repairs or touch-ups may be required.' },
+              { grade: '3', title: 'Lower Grade', desc: 'Often requiring multiple repairs or restoration. In some cases, may include vehicles affected by hail damage.' },
+              { grade: '2 / 1', title: 'Poor / Special', desc: 'Poor condition or special-condition vehicles. May include heavily worn, modified, or damaged units.' },
+              { grade: 'R / RA', title: 'Repair History', desc: 'Indicates past structural or accident damage and requires careful inspection.' },
+              { grade: 'X', title: 'Accidental', desc: 'Vehicles in accidental condition, non-drivable, or not suitable for standard grading.' },
+            ].map((item) => (
+              <div key={item.grade} className="bg-surface-high p-6 md:p-8 flex items-start gap-5 hover:bg-surface-highest transition-colors">
+                <div className="shrink-0 w-16 h-16 flex items-center justify-center bg-accent/10 border border-accent/30">
+                  <span className="font-headline text-xl font-bold text-accent">{item.grade}</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-headline text-sm font-bold text-white uppercase tracking-tight mb-2">{item.title}</h3>
+                  <p className="text-xs text-on-surface-variant leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-accent/5 border border-accent/20 p-8 md:p-10">
+            <h3 className="font-headline text-base font-bold text-accent uppercase tracking-wide mb-3">Our Quality Assurance</h3>
+            <p className="text-sm text-on-surface-variant leading-relaxed mb-3">
+              Auction grades provide a general indication of a vehicle&apos;s condition, but they do not reflect the full picture. Every vehicle is carefully reviewed beyond the grade, including the full auction sheet, inspector comments, repair history, and condition details.
+            </p>
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              This ensures an accurate assessment and that only vehicles meeting our quality standards are selected — so you can buy with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing & Service Fees */}
-      <section id="pricing" className="py-24 md:py-32 bg-surface-lowest scroll-mt-24">
+      <section id="pricing" className="py-24 md:py-32 bg-surface-lowest scroll-mt-24 border-t border-white/5">
         <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
           <div className="mb-16">
             <span className="font-label text-accent uppercase tracking-[0.2em] text-xs block mb-4">Pricing & Service Fees</span>
@@ -306,9 +370,15 @@ export default function Info() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div className="bg-surface-lowest p-2 border border-white/5 overflow-hidden">
-              <img src="/auction-invoice.jpeg" alt="Official Auction Invoice Sample" className="w-full h-auto object-contain" />
-              <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-2 pb-1">Sample Auction Invoice (details partially hidden for privacy)</p>
+            <div className="space-y-6">
+              <div className="bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                <img src="/auction-invoice.jpeg" alt="Official Auction Invoice Sample" className="w-full h-auto object-contain" />
+                <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-2 pb-1">Sample Auction Invoice (details partially hidden for privacy)</p>
+              </div>
+              <div className="bg-surface-lowest p-2 border border-white/5 overflow-hidden">
+                <img src="/auction-invoice-annotated.png" alt="Annotated auction invoice showing successful bid price, recycle tax, road tax, auction bidding fees, consumption tax, and payable amount" className="w-full h-auto object-contain" />
+                <p className="text-[10px] font-label tracking-widest uppercase text-outline text-center mt-2 pb-1">Annotated — what each line item means</p>
+              </div>
             </div>
             <div className="space-y-4">
               {[

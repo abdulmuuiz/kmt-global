@@ -130,6 +130,7 @@ export default function Layout() {
           <div>
             <h4 className="font-headline text-white text-[0.75rem] tracking-[0.2em] uppercase mb-6 font-bold">Connect</h4>
             <ul className="space-y-4">
+              <li><Link to="/about" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">About Us</Link></li>
               <li><a href="mailto:info@kmtglobal.jp" className="font-label text-[0.75rem] tracking-widest uppercase text-outline hover:text-accent transition-all">Contact Us</a></li>
               <li><span className="font-label text-[0.75rem] tracking-widest uppercase text-outline">Tokyo HQ</span></li>
             </ul>

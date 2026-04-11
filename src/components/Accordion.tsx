@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface AccordionItem {
   q: string;
-  a: React.ReactNode;
+  a: ReactNode;
 }
 
 interface AccordionProps {
